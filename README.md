@@ -21,4 +21,4 @@ It can,
 That's it!!
 
 # Credits
-This tool relies on [ReoGrid](https://github.com/unvell/ReoGrid) and [Google Cloud Translation](https://cloud.google.com/translate/docs/reference/libraries/v3/overview-v3)
+This tool relies on [ReoGrid](https://github.com/unvell/ReoGrid) and [Google Cloud Translation API](https://developers.google.com/api-client-library/dotnet/apis/translate/v2)
