@@ -1,5 +1,7 @@
 # What is this?
 If you've found that the localization task is quite boring and frustrating, this is the tool for you.
+![](https://github.com/teonsen/ResxMultiLang/wiki/images/img1.png)
+
 It can,
 - Read string data from .resx files.
 - Append a word with automated multi language translation (Google's Translation-API)
@@ -18,7 +20,6 @@ It can,
 3. Type a word to localize into the text box. Or edit on the spreadsheet.
 
 4. Save
-![](https://github.com/teonsen/ResxMultiLang/wiki/images/img1.png)
 
 That's it!!
 
