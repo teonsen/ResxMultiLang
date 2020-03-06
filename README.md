@@ -1,8 +1,10 @@
 # What is this?
 If you've found that the localization task is quite boring and frustrating, this is the tool for you.
 It can,
-- Translate (Google's Translation)
-- Write it to .resx file.
+- Read string data from .resx file
+- Edit on spread sheet
+- Append a word with automated multi language translation (Google's Translation-API)
+- Write them back into .resx files.
 
 # How can I use it?
 1. Make these 4 .resx files. Empty resource file will do.
