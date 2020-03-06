@@ -1,9 +1,9 @@
 # What is this?
 If you've found that the localization task is quite boring and frustrating, this is the tool for you.
 It can,
-- Read string data from .resx files
-- Edit on spread sheet
+- Read string data from .resx files.
 - Append a word with automated multi language translation (Google's Translation-API)
+- Edit on spread sheet if you don't like its translation.
 - Write them back into .resx files.
 
 # How can I use it?
