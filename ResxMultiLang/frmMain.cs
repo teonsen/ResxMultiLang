@@ -29,7 +29,7 @@ namespace ResxMultiLang
             _Locales.Add(Col.zh_CN, "zh-CN");
             _Locales.Add(Col.ja_JP, "ja-JP");
             _Locales.Add(Col.en_US, "en-US");
-            _Locales.Add(Col.zh_TW, "zh-F");
+            _Locales.Add(Col.zh_TW, "zh-TW");
         }
 
         private void frmMain_Load(object sender, EventArgs e)
