@@ -140,7 +140,7 @@ namespace ResxMultiLang
         {
             MakeRecentMenu(resxFile);
             CurrentResxFile = resxFile;
-            this.Text += " : " + resxFile;
+            this.Text = "ResxMultiLang : " + resxFile;
             tsmiFile_Save.Enabled = true;
             tsmiFile_Export.Enabled = true;
             grpTranslate.Enabled = true;
@@ -168,7 +168,6 @@ namespace ResxMultiLang
                 Bold = true
             });
             sht.FreezeToCell("B2");
-
             int i = 1;
             foreach (var item in enUS)
             {
@@ -177,7 +176,16 @@ namespace ResxMultiLang
                 sht[i, (int)Col.ja_JP] = jaJP[item.Key];
                 sht[i, (int)Col.en_US] = item.Value;
                 sht[i, (int)Col.zh_TW] = zhTW[item.Key];
+                AppendRow(i);
                 i++;
+            }
+        }
+
+        private void AppendRow(int currentRow)
+        {
+            if (currentRow >= 199)
+            {
+                reoGrid.Worksheets[0].AppendRows(1);
             }
         }
 
@@ -273,6 +281,10 @@ namespace ResxMultiLang
 
             for (int i = 1; i < sht.MaxContentRow + 1; i++)
             {
+                if (sht[i, (int)Col.Key] == null || sht[i, (int)Col.Key].ToString().Length == 0)
+                {
+                    break;
+                }
                 zhCN.Add(sht[i, (int)Col.Key].ToString(), sht[i, (int)Col.zh_CN].ToString());
                 jaJP.Add(sht[i, (int)Col.Key].ToString(), sht[i, (int)Col.ja_JP].ToString());
                 enUS.Add(sht[i, (int)Col.Key].ToString(), sht[i, (int)Col.en_US].ToString());
@@ -330,6 +342,7 @@ namespace ResxMultiLang
         {
             var sht = reoGrid.Worksheets[0];
             int lastRow = sht.MaxContentRow + 1;
+            AppendRow(lastRow);
 
             sht[lastRow, (int)Col.Key] = "key" + (lastRow + 1);
             if (radioFromChinese.Checked)
@@ -362,6 +375,7 @@ namespace ResxMultiLang
                 sht[lastRow, (int)Col.en_US] = txtToTranslate.Text;
                 sht[lastRow, (int)Col.zh_TW] = tw;
             }
+            sht.SelectionRange = new RangePosition($"A{lastRow + 1}:E{lastRow + 1}");
         }
 
         private void btnSave_Click(object sender, EventArgs e)
